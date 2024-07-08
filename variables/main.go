@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt" 
+	"fmt"
 	"unsafe"
 )
 
@@ -46,6 +46,7 @@ func main() {
 	fmt.Println("My const myStringConst is:", myStringConst)
 
 	/*
+	    Type    Sizq      Range
 		int8    8 bits    -128 to 127
 		int16   16 bits   -2^15 to 2^15 -1
 		int32   32 bits   -2^31 to 2^31 -1
@@ -71,4 +72,38 @@ func main() {
 	var my64BitsIntVar int64
 	fmt.Printf("Type: %T, bytes %d, bits %d\n", my64BitsIntVar, unsafe.Sizeof(my64BitsIntVar), unsafe.Sizeof(my64BitsIntVar)*8)
 
+	//UINT
+	/*
+	    Type    Sizq      Range
+		uint8    8 bits    0 to 255
+		uint16   16 bits   0 to 2^16 -1
+		uint32   32 bits   0 to 2^32 -1
+		uint64   64 bits   0 to 2^64 -1
+		uint Platform dependent
+	*/
+
+	fmt.Println()
+
+	var my8BitsUintVar uint8
+	fmt.Printf("Type: %T, bytes %d, bits %d\n", my8BitsUintVar, unsafe.Sizeof(my8BitsUintVar), unsafe.Sizeof(my8BitsUintVar)*8)
+
+	var my16BitsUintVar uint16
+	fmt.Printf("Type: %T, bytes %d, bits %d\n", my16BitsUintVar, unsafe.Sizeof(my16BitsUintVar), unsafe.Sizeof(my16BitsUintVar)*8)
+
+	var my32BitsUintVar uint32
+	fmt.Printf("Type: %T, bytes %d, bits %d\n", my32BitsUintVar, unsafe.Sizeof(my32BitsUintVar), unsafe.Sizeof(my32BitsUintVar)*8)
+
+	var my64BitsUintVar uint64
+	fmt.Printf("Type: %T, bytes %d, bits %d\n", my64BitsUintVar, unsafe.Sizeof(my64BitsUintVar), unsafe.Sizeof(my64BitsUintVar)*8)
+
+	fmt.Println()
+
+	//TIPOS DE DATOS FLOTANTES
+	var myFloat32Var float32
+	fmt.Printf("Float default value: %f\n", myFloat32Var)
+	fmt.Printf("Type: %T, bytes %d, bits %d\n", myFloat32Var, unsafe.Sizeof(myFloat32Var), unsafe.Sizeof(myFloat32Var)*8)
+
+	var myFloat64Var float64
+	fmt.Printf("Float default value: %f\n", myFloat64Var)
+	fmt.Printf("Type: %T, bytes %d, bits %d\n", myFloat64Var, unsafe.Sizeof(myFloat64Var), unsafe.Sizeof(myFloat64Var)*8)
 }
