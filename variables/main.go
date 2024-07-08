@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt" 
+	"unsafe"
+)
 
 func main() {
 
@@ -41,5 +44,31 @@ func main() {
 
 	const myStringConst = "a"
 	fmt.Println("My const myStringConst is:", myStringConst)
+
+	/*
+		int8    8 bits    -128 to 127
+		int16   16 bits   -2^15 to 2^15 -1
+		int32   32 bits   -2^31 to 2^31 -1
+		int64   64 bits   -2^63 to 2^63 -1
+		int Platform dependent
+	*/
+
+	fmt.Println()
+
+	//imprimir con Printf para dar un formato especifico 
+	var my8BitsIntVar int8
+	fmt.Printf("Int default value: %d\n", my8BitsIntVar)
+
+	//validamos cuanta memoria tiene instanciada la variable
+	fmt.Printf("Type: %T, bytes %d, bits %d\n", my8BitsIntVar, unsafe.Sizeof(my8BitsIntVar), unsafe.Sizeof(my8BitsIntVar)*8)
+
+	var my16BitsIntVar int16
+	fmt.Printf("Type: %T, bytes %d, bits %d\n", my16BitsIntVar, unsafe.Sizeof(my16BitsIntVar), unsafe.Sizeof(my16BitsIntVar)*8)
+
+	var my32BitsIntVar int32
+	fmt.Printf("Type: %T, bytes %d, bits %d\n", my32BitsIntVar, unsafe.Sizeof(my32BitsIntVar), unsafe.Sizeof(my32BitsIntVar)*8)
+
+	var my64BitsIntVar int64
+	fmt.Printf("Type: %T, bytes %d, bits %d\n", my64BitsIntVar, unsafe.Sizeof(my64BitsIntVar), unsafe.Sizeof(my64BitsIntVar)*8)
 
 }
