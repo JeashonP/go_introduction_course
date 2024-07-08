@@ -106,4 +106,14 @@ func main() {
 	var myFloat64Var float64
 	fmt.Printf("Float default value: %f\n", myFloat64Var)
 	fmt.Printf("Type: %T, bytes %d, bits %d\n", myFloat64Var, unsafe.Sizeof(myFloat64Var), unsafe.Sizeof(myFloat64Var)*8)
+
+	fmt.Println()
+
+	var myStringVar3 string
+	fmt.Printf("String default value: %s\n", myStringVar3)
+
+	myStringVar4 := `My string variable in golang
+	whit multiple
+	line` 	
+	fmt.Printf("The variable myStringVar4 value is: %s\n", myStringVar4)
 }
