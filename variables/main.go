@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"unsafe"
+	"strconv"
 )
 
 func main() {
@@ -116,4 +117,36 @@ func main() {
 	whit multiple
 	line` 	
 	fmt.Printf("The variable myStringVar4 value is: %s\n", myStringVar4)
+
+	//scope
+	{
+		fmt.Println()
+
+		floatVar := 33.11
+		fmt.Printf("Type: %T, value %f\n", floatVar, floatVar)
+
+		//convertir a string
+		floatStrVar := fmt.Sprintf("%.2f", floatVar)
+		fmt.Printf("Type: %T, value %s\n", floatStrVar, floatStrVar)
+
+		intVar := 22
+		fmt.Printf("Type: %T, value %d\n", intVar, intVar)
+
+		//convertir a string
+		intStrVar := fmt.Sprintf("%d", intVar)
+		fmt.Printf("Type: %T, value %s\n", intStrVar, intStrVar)
+
+		intVal1, err := strconv.ParseInt("1333", 0, 64)
+		fmt.Println(err)
+		fmt.Printf("Type: %T, value %d\n", intVal1, intVal1)
+
+		intVal2, err := strconv.ParseInt("aa122", 0, 64)
+		fmt.Println(err)
+		fmt.Printf("Type: %T, value %d\n", intVal2, intVal2)
+
+		//tomamos el error pero no hacemos nada con el
+		floatVal1, err := strconv.ParseFloat("-11.2", 64)
+		fmt.Printf("Type: %T, value %f\n", floatVal1, floatVal1)
+	}
+
 }
