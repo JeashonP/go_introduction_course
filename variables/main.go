@@ -148,5 +148,4 @@ func main() {
 		floatVal1, err := strconv.ParseFloat("-11.2", 64)
 		fmt.Printf("Type: %T, value %f\n", floatVal1, floatVal1)
 	}
-
 }
