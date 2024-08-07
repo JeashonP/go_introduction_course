@@ -66,7 +66,4 @@ func main() {
 		}
 		fmt.Println()
 	}
-
-
-
 }
